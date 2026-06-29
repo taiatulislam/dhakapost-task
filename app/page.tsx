@@ -1,64 +1,153 @@
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Home() {
+  const news = [
+    {
+      id: "1001",
+      title: "বাংলাদেশে ভারী বৃষ্টির সম্ভাবনা, সতর্ক থাকার পরামর্শ",
+      summary:
+        "আগামী ২৪ ঘণ্টায় দেশের বিভিন্ন অঞ্চলে মাঝারি থেকে ভারী বৃষ্টিপাতের পূর্বাভাস দিয়েছে আবহাওয়া অধিদপ্তর।",
+      image:
+        "https://images.unsplash.com/photo-1500375592092-40eb2168fd21?auto=format&fit=crop&w=660&h=440&q=80",
+      source: "Demo News",
+      category: "জাতীয়",
+      published_at: "2026-06-29T11:20:00Z",
+      details_url: "/api/news/details/1001.json",
+    },
+    {
+      id: "1002",
+      title: "ঢাকায় নতুন মেট্রোরেল স্টেশনের নির্মাণকাজ দ্রুত এগোচ্ছে",
+      summary:
+        "নির্ধারিত সময়ের মধ্যেই নতুন স্টেশন চালুর লক্ষ্যে দিনরাত কাজ চলছে।",
+      image:
+        "https://images.unsplash.com/photo-1519501025264-65ba15a82390?auto=format&fit=crop&w=660&h=440&q=80",
+      source: "Demo News",
+      category: "অবকাঠামো",
+      published_at: "2026-06-29T10:10:00Z",
+      details_url: "/api/news/details/1002.json",
+    },
+    {
+      id: "1003",
+      title: "কৃষকদের জন্য নতুন প্রণোদনা প্যাকেজ ঘোষণা",
+      summary:
+        "উৎপাদন বাড়াতে আধুনিক কৃষি প্রযুক্তি ব্যবহারে নতুন সহায়তা দেওয়া হবে।",
+      image:
+        "https://images.unsplash.com/photo-1500937386664-56d1dfef3854?auto=format&fit=crop&w=660&h=440&q=80",
+      source: "Demo News",
+      category: "কৃষি",
+      published_at: "2026-06-29T09:30:00Z",
+      details_url: "/api/news/details/1003.json",
+    },
+    {
+      id: "1004",
+      title: "দেশীয় স্টার্টআপে বিনিয়োগ বাড়ছে প্রযুক্তি খাতে",
+      summary:
+        "নতুন উদ্যোক্তাদের জন্য আন্তর্জাতিক বিনিয়োগকারীদের আগ্রহ বেড়েছে।",
+      image:
+        "https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=660&h=440&q=80",
+      source: "Demo News",
+      category: "প্রযুক্তি",
+      published_at: "2026-06-29T08:15:00Z",
+      details_url: "/api/news/details/1004.json",
+    },
+    {
+      id: "1005",
+      title: "পর্যটন এলাকায় বেড়েছে দর্শনার্থীর ভিড়",
+      summary:
+        "ছুটির দিনে দেশের জনপ্রিয় পর্যটনকেন্দ্রগুলোতে পর্যটকদের উপস্থিতি বেড়েছে।",
+      image:
+        "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=660&h=440&q=80",
+      source: "Demo News",
+      category: "ভ্রমণ",
+      published_at: "2026-06-29T07:00:00Z",
+      details_url: "/api/news/details/1005.json",
+    },
+    {
+      id: "1006",
+      title: "আন্তর্জাতিক বাজারে জ্বালানি তেলের দামে নতুন পরিবর্তন",
+      summary:
+        "বিশ্ববাজারে অপরিশোধিত তেলের দামে সাম্প্রতিক ওঠানামার প্রভাব পড়ছে আমদানিকারক দেশগুলোতে।",
+      image:
+        "https://images.unsplash.com/photo-1473448912268-2022ce9509d8?auto=format&fit=crop&w=660&h=440&q=80",
+      source: "Demo News",
+      category: "অর্থনীতি",
+      published_at: "2026-06-29T06:20:00Z",
+      details_url: "/api/news/details/1006.json",
+    },
+  ];
+
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
+    <div className="min-h-screen bg-background">
+      <main className="mx-auto max-w-5xl px-4 md:px-6 py-8 md:py-10">
+        <section className="grid gap-5 lg:grid-cols-3">
+          <article className="flex h-full flex-col border-r-0 border-border pr-0 md:border-r md:pr-5 lg:col-span-2">
             <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
+              src={news?.[0]?.image}
+              alt={news?.[0]?.title}
+              width={500}
+              height={200}
+              loading="eager"
+              className="h-87.5 w-full object-cover"
             />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
+
+            <h1 className="mt-5 text-[24px] font-bold text-foreground">
+              {news?.[0]?.title}
+            </h1>
+
+            <p className="mt-3 text-xs">
+              {news?.[0]?.summary}
+            </p>
+          </article>
+
+          <aside className="flex h-full flex-col">
+            {news?.slice(1, 4)?.map((n) => (
+              <Link
+                key={n.id}
+                href="#"
+                className="flex flex-1 items-start gap-4 border-b border-border py-6 first:pt-0 last:border-b-0 last:pb-0"
+              >
+                <Image
+                  src={n.image}
+                  alt={n.title}
+                  width={300}
+                  height={500}
+                  className="h-full w-26 shrink-0 border border-border object-cover"
+                />
+
+                <h3 className="text-foreground">{n.title}</h3>
+              </Link>
+            ))}
+          </aside>
+        </section>
+
+        <hr className="my-7 border-border" />
+
+        {/* Bottom Section */}
+        <section className="grid gap-10 md:grid-cols-2">
+          {news?.slice(4, 6)?.map((n) => (
+            <article
+              key={n.id}
+              className="grid grid-cols-[1fr_1.2fr] gap-5 border-border border-r-0 md:border-r last:border-0 pr-5"
+            >
+              <Image
+                src={n.image}
+                alt={n.title}
+                width={300}
+                height={300}
+                className="w-full object-cover"
+              />
+              <div>
+                <h2 className="text-[17px] font-bold text-foreground">
+                  {n.title}
+                </h2>
+                <p className="mt-2 text-[11px]">
+                  {n.summary}
+                </p>
+              </div>
+            </article>
+          ))}
+        </section>
       </main>
     </div>
   );
