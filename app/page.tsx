@@ -95,16 +95,14 @@ export default function Home() {
               {news?.[0]?.title}
             </h1>
 
-            <p className="mt-3 text-xs">
-              {news?.[0]?.summary}
-            </p>
+            <p className="mt-3 text-xs">{news?.[0]?.summary}</p>
           </article>
 
           <aside className="flex h-full flex-col">
             {news?.slice(1, 4)?.map((n) => (
               <Link
                 key={n.id}
-                href="#"
+                href={`/${n.id}`}
                 className="flex flex-1 items-start gap-4 border-b border-border py-6 first:pt-0 last:border-b-0 last:pb-0"
               >
                 <Image
@@ -126,8 +124,9 @@ export default function Home() {
         {/* Bottom Section */}
         <section className="grid gap-10 md:grid-cols-2">
           {news?.slice(4, 6)?.map((n) => (
-            <article
+            <Link
               key={n.id}
+              href={`/${n.id}`}
               className="grid grid-cols-[1fr_1.2fr] gap-5 border-border border-r-0 md:border-r last:border-0 pr-5"
             >
               <Image
@@ -141,11 +140,9 @@ export default function Home() {
                 <h2 className="text-[17px] font-bold text-foreground">
                   {n.title}
                 </h2>
-                <p className="mt-2 text-[11px]">
-                  {n.summary}
-                </p>
+                <p className="mt-2 text-[11px]">{n.summary}</p>
               </div>
-            </article>
+            </Link>
           ))}
         </section>
       </main>
