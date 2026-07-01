@@ -19,7 +19,9 @@ interface NewsDetailsResponse {
 }
 
 export async function getNewsDetails(id: string): Promise<NewsDetailsResponse> {
-  const res = await fetch(`https://news-json.vercel.app/details/${id}.json`);
+  const res = await fetch(`https://news-json.vercel.app/details/${id}.json`, {
+    cache: "force-cache",
+  });
 
   if (!res.ok) {
     throw new Error("Failed to fetch news details");

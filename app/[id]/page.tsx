@@ -6,12 +6,50 @@ import { IoShareSocialOutline } from "react-icons/io5";
 import { FiPrinter } from "react-icons/fi";
 import { formatPublishedDateTime } from "@/utils/timeConvertBangla";
 import { getNewsDetails } from "@/lib/getNewsDetails";
+import type { Metadata } from "next";
 
 type Props = {
   params: Promise<{
     id: string;
   }>;
 };
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ id: string }>;
+}): Promise<Metadata> {
+  const { id } = await params;
+  const news = await getNewsDetails(id);
+  const article = news?.article;
+
+  if (!article) {
+    return {
+      title: "নিবন্ধ পাওয়া যায়নি | Dhaka Post",
+    };
+  }
+
+  return {
+    title: `${article.title} | Dhaka Post`,
+    description: article.subtitle,
+    openGraph: {
+      title: article.title,
+      description: article.subtitle,
+      images: [
+        { url: article.image, width: 660, height: 440, alt: article.title },
+      ],
+      type: "article",
+      publishedTime: article.published_at,
+      authors: [article.author],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: article.title,
+      description: article.subtitle,
+      images: [article.image],
+    },
+  };
+}
 
 export default async function DetailsPage({ params }: Props) {
   const { id } = await params;
