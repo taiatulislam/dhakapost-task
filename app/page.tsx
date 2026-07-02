@@ -7,7 +7,7 @@ export default async function Home() {
   const news = newsList.news;
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="bg-background">
       <main className="mx-auto max-w-5xl px-4 md:px-6 py-8 md:py-10">
         <section className="grid gap-5 lg:grid-cols-3">
           <Link

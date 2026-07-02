@@ -2,7 +2,7 @@ import Link from "next/link";
 
 export default function Footer() {
   return (
-    <footer className="mt-16 border-t border-border bg-[#dce2f2]/60">
+    <footer className="border-t border-border bg-[#dce2f2]/60">
       <div className="mx-auto max-w-7xl px-6 py-12 text-center">
         <Link href="/" className="text-2xl font-bold text-foreground">
           ঢাকা পোস্ট
