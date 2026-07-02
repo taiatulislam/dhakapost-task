@@ -14,8 +14,8 @@ export default function Navbar() {
   ];
 
   return (
-    <div className="border-b border-border">
-      <div className="mx-auto flex max-w-5xl items-center justify-between px-6 py-1.5">
+    <header className="border-b border-border">
+      <div className="max-w-5xl mx-auto flex items-center justify-between px-6 py-1.5">
         <Link
           href="/"
           className="text-[40px] text-darkblue font-bold tracking-tight"
@@ -33,7 +33,7 @@ export default function Navbar() {
             </Link>
           ))}
         </nav>
-        <div className="flex items-center gap-7 text-[#757575]">
+        <div className="flex items-center gap-7 text-gray-500">
           <button
             aria-label="search"
             className="transition-colors hover:text-foreground"
@@ -54,6 +54,6 @@ export default function Navbar() {
           </button>
         </div>
       </div>
-    </div>
+    </header>
   );
 }

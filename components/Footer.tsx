@@ -22,7 +22,7 @@ export default function Footer() {
           </a>
         </nav>
         <p className="mt-6 text-xs text-muted-foreground">
-          © ২০২৬ মেট্রো নিউজ। সর্বস্বত্ব সংরক্ষিত।
+          © ২০২৬ ঢাকা পোস্ট। সর্বস্বত্ব সংরক্ষিত।
         </p>
       </div>
     </footer>
