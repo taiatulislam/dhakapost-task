@@ -110,7 +110,7 @@ export default async function DetailsPage({ params }: Props) {
             [&>h2]:mb-4
             [&>h2]:text-xl
             [&>h2]:font-bold
-            [&>h2]:text-[#0b1a31]
+            [&>h2]:text-darkblue
 
             [&>ul]:mb-6
             [&>ul]:ml-6
@@ -121,7 +121,7 @@ export default async function DetailsPage({ params }: Props) {
 
             [&>blockquote]:my-6
             [&>blockquote]:border-l-4
-            [&>blockquote]:border-[#0b1a31]
+            [&>blockquote]:border-darkblue
             [&>blockquote]:pl-5
             [&>blockquote]:italic
             [&>blockquote]:text-foreground/80
@@ -141,7 +141,7 @@ export default async function DetailsPage({ params }: Props) {
           ))}
         </div>
         <div className="mt-8 flex items-center justify-between rounded-sm bg-[#f1f3ff] px-5 py-4">
-          <span className="text-xs font-bold text-[#0b1a31]">
+          <span className="text-xs font-bold text-darkblue">
             নিবন্ধটি শেয়ার করুন:
           </span>
           <div className="flex items-center gap-4 text-muted-foreground">

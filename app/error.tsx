@@ -16,7 +16,7 @@ export default function Error({
   return (
     <div className="min-h-screen bg-background flex items-center justify-center px-4">
       <div className="text-center max-w-md">
-        <p className="text-5xl font-bold text-[#0b1a31]">⚠️</p>
+        <p className="text-5xl font-bold text-darkblue">⚠️</p>
         <h1 className="mt-4 text-2xl font-bold text-foreground">
           কিছু একটা সমস্যা হয়েছে
         </h1>
@@ -30,7 +30,7 @@ export default function Error({
         )}
         <button
           onClick={unstable_retry}
-          className="mt-6 inline-flex items-center gap-2 rounded-sm bg-[#0b1a31] px-5 py-2.5 text-sm font-medium text-white transition-opacity hover:opacity-80 cursor-pointer"
+          className="mt-6 inline-flex items-center gap-2 rounded-sm bg-darkblue px-5 py-2.5 text-sm font-medium text-white transition-opacity hover:opacity-80 cursor-pointer"
         >
           আবার চেষ্টা করুন
         </button>

@@ -18,7 +18,7 @@ export default function Navbar() {
       <div className="mx-auto flex max-w-5xl items-center justify-between px-6 py-1.5">
         <Link
           href="/"
-          className="text-[40px] text-[#0b1a31] font-bold tracking-tight"
+          className="text-[40px] text-darkblue font-bold tracking-tight"
         >
           ঢাকা পোস্ট
         </Link>

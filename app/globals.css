@@ -3,12 +3,17 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  --darkblue: #0b1a31;
+  --hoverColor: #3b82f6;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-border: #dedede;
+  --color-darkblue: var(--darkblue);
+  --color-darkblue: var(--darkblue);
+  --color-hoverColor: var(--hoverColor);
 
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
