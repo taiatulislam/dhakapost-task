@@ -1,36 +1,107 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# ঢাকা পোস্ট (Dhaka Post) - News Portal Task Client
 
-## Getting Started
+A modern, highly performant, and fully responsive news portal client built with **Next.js 16 (App Router)**, **React 19**, **TypeScript**, and **Tailwind CSS v4**.
 
-First, run the development server:
+The application fetches dynamic news articles from a JSON server API and presents them using modern UI/UX patterns, optimized skeleton screens, custom error boundaries, and localized Bengali typography.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+## 🔗 Live Demo
+The application is live and deployed on Netlify:
+👉 **[Dhaka Post Live Site (https://dhaka-post-apon.netlify.app)](https://dhaka-post-apon.netlify.app)**
+
+---
+
+## 🚀 Key Features
+
+- **Dynamic Routing & Full SEO Optimization**: Fully leverages the Next.js App Router. Details page metadata (OpenGraph & Twitter Card headers) is dynamically generated using `generateMetadata` in the dynamic route to improve search engine visibility and shareability.
+- **Premium News Layouts**:
+  - A grid-based homepage showcasing a main featured article, secondary sidebar lists, and dual bottom teaser columns.
+  - Hover micro-animations like smooth scaling on image elements.
+- **Localized Bengali Interface**:
+  - Uses the Google Font `Noto Serif Bengali` as the primary font family for authentic typographic experience.
+  - Features custom localized time and date converters using the `bn-BD` locale.
+- **Client Actions**:
+  - Built-in social sharing integration using the Web Share API (with automated clipboard copying fallback).
+  - Print-friendly layout options directly from the article view.
+- **Polished UX (Skeletons & Error Handling)**:
+  - Custom skeleton screens matching homepage and details layouts for smooth loading transitions without layout shifts.
+  - Custom error page boundary and 404 Page Not Found screen.
+
+---
+
+## 🛠️ Tech Stack & Dependencies
+
+- **Framework**: [Next.js](https://nextjs.org/) (v16.2.9)
+- **Language**: [TypeScript](https://www.typescriptlang.org/) & [React](https://react.dev/) (v19.2.4)
+- **Styling**: [Tailwind CSS v4](https://tailwindcss.com/) (using `@tailwindcss/postcss` for lightning-fast styling build times)
+- **Icons**: [React Icons](https://react-icons.github.io/react-icons/)
+- **Hosting**: [Netlify](https://www.netlify.com/)
+
+---
+
+## 📁 Project Structure
+
+Here is a breakdown of the key files and directory layout:
+
+```text
+├── app/
+│   ├── [id]/
+│   │   ├── loading.tsx     # Skeleton screen for the article details view
+│   │   └── page.tsx        # Dynamic route for viewing article details & SEO configuration
+│   ├── error.tsx           # Global/Route-level error fallback component
+│   ├── favicon.ico         # Dhaka Post favicon
+│   ├── globals.css         # Tailwind v4 configuration, theme variables & default Bengali font
+│   ├── layout.tsx          # Root HTML layout importing Noto Serif Bengali, Navbar, & Footer
+│   ├── loading.tsx         # Skeleton screen for the homepage news grid
+│   ├── not-found.tsx       # Custom 404 Page Not Found layout
+│   └── page.tsx            # Main news homepage featuring grid layouts & data fetching
+├── components/
+│   ├── ArticleActions.tsx  # Interactive article tools: native share, bookmark, print
+│   ├── Footer.tsx          # Global footer component with links and copyright
+│   └── Navbar.tsx          # Global header navigation containing navigation links & actions
+├── lib/
+│   ├── getNewsDetails.ts   # Fetch client for retrieving specific article details by ID
+│   └── getNewsList.ts      # Fetch client for retrieving the list of home articles
+├── utils/
+│   └── timeConvertBangla.ts # Formatter mapping timestamps into Bangla locale representation
+├── package.json            # Scripts and dependencies
+└── tsconfig.json           # TypeScript configuration
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+---
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 💻 Local Development Setup
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+To run the application locally, follow these steps:
 
-## Learn More
+### 1. Clone the repository
+```bash
+git clone <repository-url>
+cd dhakapost-task
+```
 
-To learn more about Next.js, take a look at the following resources:
+### 2. Install dependencies
+```bash
+npm install
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### 3. Run the development server
+```bash
+npm run dev
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the application in action.
 
-## Deploy on Vercel
+### 4. Build for production
+```bash
+npm run build
+npm run start
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+---
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## 🌐 Netlify Deployment Notes
+
+The project is configured for continuous deployment on Netlify using the default Next.js build commands:
+- **Build Command**: `npm run build`
+- **Publish Directory**: `.next`
+- **Environment**: Node.js environment configured to support React 19 and Next.js 16.
