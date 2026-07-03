@@ -13,7 +13,7 @@ export default async function Home() {
           href={`/${news?.[0]?.id}`}
           className="group block h-full lg:col-span-2"
         >
-          <article className="flex h-full flex-col border-r-0 border-border pr-0 md:border-r md:pr-5">
+          <article className="flex h-full flex-col border-r-0 border-border pr-0 lg:border-r lg:pr-5">
             <div className="overflow-hidden">
               <Image
                 src={news?.[0]?.image}
@@ -40,7 +40,7 @@ export default async function Home() {
               href={`/${n.id}`}
               className="group flex flex-1 items-start gap-4 border-b border-border py-6 first:pt-0 last:border-b-0 last:pb-0"
             >
-              <div className="h-full w-26 shrink-0 overflow-hidden border border-border">
+              <div className="h-26 w-26 shrink-0 overflow-hidden border border-border">
                 <Image
                   src={n.image}
                   alt={n.title}

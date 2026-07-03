@@ -5,7 +5,7 @@ export default function Loading() {
         {/* Hero + sidebar skeleton */}
         <section className="grid gap-5 lg:grid-cols-3">
           {/* Main article skeleton */}
-          <div className="flex h-full flex-col border-r-0 border-border pr-0 md:border-r md:pr-5 lg:col-span-2">
+          <div className="flex h-full flex-col border-r-0 border-border pr-0 lg:border-r lg:pr-5 lg:col-span-2">
             <div className="h-87.5 w-full animate-pulse rounded-sm bg-border" />
             <div className="mt-5 h-7 w-3/4 animate-pulse rounded-sm bg-border" />
             <div className="mt-3 space-y-2">

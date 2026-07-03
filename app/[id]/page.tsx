@@ -6,12 +6,18 @@ import { formatPublishedDateTime } from "@/utils/timeConvertBangla";
 import { getNewsDetails } from "@/lib/getNewsDetails";
 import type { Metadata } from "next";
 import ArticleActions from "@/components/ArticleActions";
+import getNewsList from "@/lib/getNewsList";
 
 type Props = {
   params: Promise<{
     id: string;
   }>;
 };
+
+export async function generateStaticParams() {
+  const data = await getNewsList();
+  return data.news.map((item) => ({ id: item.id }));
+}
 
 export async function generateMetadata({
   params,
@@ -89,6 +95,7 @@ export default async function DetailsPage({ params }: Props) {
           alt="দেশের উপকূলীয় জেলাগুলোতে বৃষ্টির দাপট বাড়ছে"
           height={200}
           width={200}
+          loading="eager"
           className="w-full object-cover"
         />
         <figcaption className="mt-3 text-center text-xs italic text-muted-foreground">
