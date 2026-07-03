@@ -11,7 +11,7 @@ export default async function Home() {
       <section className="grid gap-5 lg:grid-cols-3">
         <Link
           href={`/${news?.[0]?.id}`}
-          className="group block h-full lg:col-span-2"
+          className="group block h-full lg:col-span-2 border-b border-border pb-5 lg:border-0"
         >
           <article className="flex h-full flex-col border-r-0 border-border pr-0 lg:border-r lg:pr-5">
             <div className="overflow-hidden">
@@ -21,7 +21,7 @@ export default async function Home() {
                 width={500}
                 height={200}
                 loading="eager"
-                className="h-87.5 w-full object-cover transition-transform duration-300 group-hover:scale-105"
+                className="h-55 lg:h-87.5 w-full object-cover transition-transform duration-300 group-hover:scale-105"
               />
             </div>
 
@@ -61,14 +61,14 @@ export default async function Home() {
       <hr className="my-7 border-border" />
 
       {/* Bottom Section */}
-      <section className="grid gap-10 md:grid-cols-2">
+      <section className="grid gap-10 grid-cols-1 lg:grid-cols-2">
         {news?.slice(4, 6)?.map((n) => (
           <Link
             key={n.id}
             href={`/${n.id}`}
-            className="group grid grid-cols-[1fr_1.2fr] gap-5 border-border border-r-0 md:border-r last:border-0 pr-5"
+            className="group grid grid-cols-[104px_1fr] lg:grid-cols-[1fr_1.2fr] gap-5 border-border border-r-0 lg:border-r last:border-0 pr-5"
           >
-            <div className="h-full shrink-0 overflow-hidden border border-border">
+            <div className="h-26 w-26 md:h-full md:w-full shrink-0 overflow-hidden border border-border">
               <Image
                 src={n.image}
                 alt={n.title}
@@ -77,11 +77,12 @@ export default async function Home() {
                 className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
               />
             </div>
+
             <div>
-              <h2 className="text-[17px] font-bold text-foreground group-hover:text-hoverColor">
+              <h2 className="text-[17px] font-normal lg:font-bold text-foreground group-hover:text-hoverColor">
                 {n.title}
               </h2>
-              <p className="mt-2 text-[11px]">{n.summary}</p>
+              <p className="mt-2 text-[11px] hidden lg:block">{n.summary}</p>
             </div>
           </Link>
         ))}

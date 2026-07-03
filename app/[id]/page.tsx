@@ -14,6 +14,9 @@ type Props = {
   }>;
 };
 
+export const dynamicParams = true;
+export const revalidate = 3600;
+
 export async function generateStaticParams() {
   const data = await getNewsList();
   return data.news.map((item) => ({ id: item.id }));

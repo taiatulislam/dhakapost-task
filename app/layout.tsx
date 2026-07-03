@@ -21,8 +21,21 @@ const notoSerifBengali = Noto_Serif_Bengali({
 });
 
 export const metadata: Metadata = {
-  title: "Dhaka Post | Home",
-  description: "This is Home Page",
+  title: "ঢাকা পোস্ট | সর্বশেষ সংবাদ",
+  description:
+    "ঢাকা পোস্টে পড়ুন বাংলাদেশ ও বিশ্বের সর্বশেষ সংবাদ, রাজনীতি, অর্থনীতি, খেলাধুলা, বিনোদন ও আরও অনেক কিছু।",
+  openGraph: {
+    title: "ঢাকা পোস্ট | সর্বশেষ সংবাদ",
+    description:
+      "ঢাকা পোস্টে পড়ুন বাংলাদেশ ও বিশ্বের সর্বশেষ সংবাদ, রাজনীতি, অর্থনীতি, খেলাধুলা, বিনোদন ও আরও অনেক কিছু।",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "ঢাকা পোস্ট | সর্বশেষ সংবাদ",
+    description:
+      "ঢাকা পোস্টে পড়ুন বাংলাদেশ ও বিশ্বের সর্বশেষ সংবাদ, রাজনীতি, অর্থনীতি, খেলাধুলা, বিনোদন ও আরও অনেক কিছু।",
+  },
 };
 
 export default function RootLayout({

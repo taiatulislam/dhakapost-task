@@ -6,7 +6,7 @@ export default function Loading() {
         <section className="grid gap-5 lg:grid-cols-3">
           {/* Main article skeleton */}
           <div className="flex h-full flex-col border-r-0 border-border pr-0 lg:border-r lg:pr-5 lg:col-span-2">
-            <div className="h-87.5 w-full animate-pulse rounded-sm bg-border" />
+            <div className="h-55 lg:h-87.5 w-full animate-pulse rounded-sm bg-border" />
             <div className="mt-5 h-7 w-3/4 animate-pulse rounded-sm bg-border" />
             <div className="mt-3 space-y-2">
               <div className="h-3 w-full animate-pulse rounded-sm bg-border" />
@@ -34,15 +34,23 @@ export default function Loading() {
         <hr className="my-7 border-border" />
 
         {/* Bottom two cards skeleton */}
-        <section className="grid gap-10 md:grid-cols-2">
+        <section className="grid grid-cols-1 gap-10 lg:grid-cols-2">
           {[0, 1].map((i) => (
-            <div key={i} className="grid grid-cols-[1fr_1.2fr] gap-5">
-              <div className="h-32 w-full animate-pulse rounded-sm bg-border" />
-              <div className="space-y-2 pt-1">
-                <div className="h-4 w-full animate-pulse rounded-sm bg-border" />
-                <div className="h-4 w-5/6 animate-pulse rounded-sm bg-border" />
-                <div className="h-3 w-full animate-pulse rounded-sm bg-border" />
-                <div className="h-3 w-4/5 animate-pulse rounded-sm bg-border" />
+            <div
+              key={i}
+              className="grid grid-cols-[104px_1fr] gap-5 lg:grid-cols-[1fr_1.2fr]"
+            >
+              <div className="h-26 w-26 overflow-hidden rounded-sm bg-border animate-pulse lg:h-full lg:w-full lg:min-h-50" />
+
+              <div className="space-y-3 pt-1">
+                <div className="h-5 w-full rounded-sm bg-border animate-pulse" />
+                <div className="h-5 w-4/5 rounded-sm bg-border animate-pulse" />
+
+                <div className="mt-3 space-y-2">
+                  <div className="h-3 w-full rounded-sm bg-border animate-pulse" />
+                  <div className="h-3 w-11/12 rounded-sm bg-border animate-pulse" />
+                  <div className="h-3 w-4/5 rounded-sm bg-border animate-pulse" />
+                </div>
               </div>
             </div>
           ))}

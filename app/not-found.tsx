@@ -10,7 +10,6 @@ export default function NotFound() {
   return (
     <div className="min-h-screen bg-background flex items-center justify-center px-4">
       <div className="text-center max-w-md">
-        <p className="text-8xl font-bold text-darkblue">৪০৪</p>
         <h1 className="mt-4 text-2xl font-bold text-foreground">
           পেজটি পাওয়া যায়নি
         </h1>
